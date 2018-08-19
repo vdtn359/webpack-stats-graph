@@ -430,7 +430,7 @@ function buildGraph(stats) {
       .map(parseModule)
       .filter(showModule);
 
-    const clusterDetails = parseClusterDetails(chunkIds.map(c => stats.chunks[c]));
+    const clusterDetails = parseClusterDetails(chunkIds.filter(id => stats.chunks[id]));
     const chunkCluster = createStyledCluster(graph, clusterDetails);
 
     function createModuleNode(cluster, m) {
